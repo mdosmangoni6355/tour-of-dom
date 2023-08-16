@@ -1,0 +1,13 @@
+h1{
+    color: brown;
+}
+ul{
+    color: darkgreen;
+}
+.bg-pink{
+    background-color: rgb(201, 157, 242) !important;
+    text-align: center;
+}
+.text-large{
+    font-size: 25px;
+}

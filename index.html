@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tour of DOM</title>
+    <link rel="stylesheet" href="styles/styles.css">
+
+    <style>
+
+        .fruits-child{
+            color: violet;
+        }
+    </style>
+
+</head>
+<body>
+    <header>
+        <h1>Welcome to my DOM</h1>
+    </header>
+    <main id="main-container">
+        <section>
+            <h1>My Awsome DOM in Javascript</h1>
+        <ul>
+            <li>Osman</li>
+            <li>Atik</li>
+            <li>Hridoy</li>
+            <li>Khakon</li>
+        </ul>
+        </section>
+        <section id="fruits-container">
+            <h1 id="fruits-title">Fruits Catagory</h1>
+            <ul class="fruits">
+                <li class="fruits-child">Apple</li>
+                <li class="fruits-child">Banana</li>
+                <li class="fruits-child">Orange</li>
+                <li>Mango</li>
+            </ul>
+        </section>
+        <section id="fruits-container1">
+            <h1 id="fruits-title1" class="bg-blue center red">Fruits Catagory</h1>
+            <ul id="fruits-list">
+                <li class="fruits-child1">Apple</li>
+                <li class="fruits-child1">Banana</li>
+                <li class="fruits-child1">Orange</li>
+                <li>Mango</li>
+            </ul>
+        </section>
+    </main>
+    <script src="js/dom.js"></script>
+    <script src="js/append.js"></script>
+    <script src="js/styleInjs.js"></script>
+    <script>
+
+        // Styleing elemet with js
+        // console.log(document.getElementById('fruits-title1').style.cssText = "color: red; background-color: pink; text-align: center;")
+        // console.log(document.getElementById('fruits-title1').style.color='blue');
+
+        // Getting class name or id name
+        // Methode-1
+        const title = document.getElementById('fruits-title1');
+
+        // document.getElementsByClassName('fruits1')[0].innerHTML
+        // document.getElementsByClassName('fruits1')[0].innerText
+
+        // Add or Remove class name
+        // title.classList.add('align');
+        // title.classList.remove('red');
+        // console.log(title.getAttribute('class'));
+
+        // Set Attribute
+        title.setAttribute('title', 'Tool tip set by javascript');
+
+        // Option-1 getElementByClassName
+        const fruits = document.getElementsByClassName('fruits-child');
+        // console.log(fruits.innerText);
+        for (const fruit of fruits){
+            // console.log(fruit.innerText);
+        }
+
+        // Option-2 getElementById
+        let fruits2 = document.getElementById('fruits-title');
+        fruits2 = fruits2.innerText = 'Osman';
+        // console.log(fruits);
+
+        // Option-3 getElementByTagName
+        const liCollection = document.getElementsByTagName('li');
+        for (const li of liCollection){
+            // console.log(li.inner);
+        }
+
+        const h1Collecttion = document.getElementsByTagName('h1');
+        for (const h1 of h1Collecttion){
+            // console.log(h1.innerText);
+        }
+
+        // Option-4 querySelector for select first element
+        const liList = document.querySelector('.fruits1 li');
+        // console.log(liList.innerText);
+
+        // Option-5 querySelectorAll
+        const someLi = document.querySelectorAll('.fruits1 .fruits-child1');
+        // console.log(someLi);
+        for (const li of someLi){
+            // console.log(li);
+        }
+    </script>
+</body>
+</html>
